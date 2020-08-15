@@ -23,7 +23,7 @@ async function showAccuracy(model, data) {
     labels.dispose();
 }
 
-async function showConfusion() {
+async function showConfusion(model, data) {
     const [preds, labels]  = doPrediction(model, data);
     const confusionMatrix = await tfvis.metrics.confusionMatrix(labels, preds);
     const container = {name: 'Confusion Matrix', tab: 'Evaluation'}
